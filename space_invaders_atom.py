@@ -82,7 +82,7 @@ while Running:
     alien_counter = (alien_counter + 1)%60
 
     screen.fill((0, 0, 0))
-    screen.blit(alien[0], (alien_x, alien_y))
+    screen.blit(alien_list[0][0], (alien_x, alien_y))
     alien_y += 2
     alien_x += 0
     for alien in alien_list:
