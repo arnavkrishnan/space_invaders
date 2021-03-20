@@ -94,7 +94,7 @@ while Running:
             hero_x = 900
             hero_y = 40
         for bullet in bullet_list:
-            bullet.move_ip(0,-4)
+            bullet.move_ip(0,-16)
             pygame.draw.rect(screen, 'yellow', bullet)
             if collide_rect(alien_x, alien_y, alien_size, alien_size, bullet.left, bullet.top, bullet.width, bullet.height):
                 explode(int(alien_x+alien_size/2), int(alien_y+alien_size/2))
@@ -104,21 +104,21 @@ while Running:
                 screen.fill((0, 0, 0))
     keypressed = pygame.key.get_pressed()
     if  keypressed[pygame.K_LEFT]:
-        hero_x -= 2
+        hero_x -= 4
         if hero_x < 0:
-            hero_x += 2
+            hero_x += 4
     if  keypressed[pygame.K_RIGHT]:
-        hero_x += 2
+        hero_x += 4
         if hero_x > 900:
-            hero_x -= 2
+            hero_x -= 4
     if  keypressed[pygame.K_UP]:
-        hero_y -= 2
+        hero_y -= 4
         if hero_y < 0:
-            hero_y += 2
+            hero_y += 4
     if  keypressed[pygame.K_DOWN]:
-        hero_y += 2
+        hero_y += 4
         if hero_y > 700:
-            hero_y -= 2
+            hero_y -= 4
     screen.blit(hero, (hero_x, hero_y))
     pygame.display.update()
     ticks_passed =  pygame.time.Clock().tick(60)
